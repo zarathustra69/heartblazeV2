@@ -66,7 +66,7 @@ CREATE TABLE Student
     group_study VARCHAR(10) NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (id_person) REFERENCES Person(id) ON DELETE CASCADE,
-    FOREIGN KEY (id_group) REFERENCES `group`(id) ON DELETE CASCADE
+    FOREIGN KEY (id_group) REFERENCES `group`(id) ON DELETE SET NULL
 );
 
 
