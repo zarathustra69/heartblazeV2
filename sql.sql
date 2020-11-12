@@ -65,7 +65,7 @@ CREATE TABLE Student
     id_group INT NULL,
     group_study VARCHAR(10) NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (id_person) REFERENCES Person(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_person) REFERENCES Person(id) ON DELETE SET NULL,
     FOREIGN KEY (id_group) REFERENCES `group`(id) ON DELETE CASCADE
 );
 
@@ -150,3 +150,11 @@ CREATE TABLE Lesson_participation
     PRIMARY KEY (id)
 );
 
+CREATE TABLE Certificate 
+(
+     id INT NOT NULL AUTO_INCREMENT,
+     PRIMARY KEY(id),
+     id_professor INT NOT NULL,
+     FOREIGN KEY (id_professor) REFERENCES professor(id) ON DELETE CASCADE,
+     image MEDIUMBLOB NOT NULL
+);
